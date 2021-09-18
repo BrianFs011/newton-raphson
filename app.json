@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "newton-raphson",
+    "slug": "newton-raphson",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "newton-raphson"
+}
