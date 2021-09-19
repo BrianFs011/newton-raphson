@@ -11,9 +11,13 @@ export default function App() {
   const [inputFC, setInputFC] = useState("");
   const [inputFD, setInputFD] = useState("");
   
-  const [inputFLA, setInputFLA] = useState("");
+/*   const [inputFLA, setInputFLA] = useState("");
   const [inputFLB, setInputFLB] = useState("");
-  const [inputFLC, setInputFLC] = useState("");
+  const [inputFLC, setInputFLC] = useState(""); */
+
+  const inputFLA = 3 * inputFA;
+  const inputFLB = 2 * inputFB;
+  const inputFLC = 1 * inputFC;
   
   const [inputX, setInputX] = useState("");
 
@@ -97,7 +101,7 @@ export default function App() {
           />
       </View>
 
-      <View style={{flexDirection: 'row', paddingTop:20, flexWrap:'wrap'}}>
+      <View style={{flexDirection: 'row', paddingTop:20, flexWrap:'wrap', paddingVertical:30}}>
         <Text style={styles.font}>F(x)= </Text>
         <TextInput style={styles.input} 
           placeholder="A" 
@@ -135,34 +139,6 @@ export default function App() {
           onChangeText={(text)=>setInputFD(text)}
           />
       </View>
-      <View style={{flexDirection: 'row', paddingVertical:30}}>
-        <Text style={styles.font}>F'(x)= </Text>
-        <TextInput style={styles.input} 
-          keyboardType='numeric' 
-          placeholder="A" 
-          placeholderTextColor="#222" 
-          textAlign="center"
-          value={inputFLA}
-          onChangeText={(text)=>setInputFLA(text)}/>
-        <Text style={styles.font}> x² + </Text>
-        <TextInput style={styles.input} 
-          keyboardType='numeric' 
-          placeholder="B" 
-          placeholderTextColor="#222" 
-          textAlign="center"
-          value={inputFLB}
-          onChangeText={(text)=>setInputFLB(text)}
-          />
-        <Text style={styles.font}> x + </Text>
-        <TextInput style={styles.input} 
-          keyboardType='numeric' 
-          placeholder="C" 
-          placeholderTextColor="#222" 
-          textAlign="center"
-          value={inputFLC}
-          onChangeText={(text)=>setInputFLC(text)}
-        />
-      </View>
 
       <View style={{flexDirection:'row',width: "50%", justifyContent:'space-evenly'}}>
         <Button title="zerar" onPress={()=>zerar()} color="#f27e7c"/>
@@ -174,7 +150,7 @@ export default function App() {
         ?
         <View/>
         :
-        <View style={{width:'100%', marginLeft:30, maxHeight: '55%', marginTop: 20}}>
+        <View style={{width:'100%', marginLeft:30, maxHeight: '67%', marginTop: 20}}>
           <FlatList 
           data={tableResult}
           renderItem={({item})=><Table {...item} key={Math.random()} results={item}/>}
@@ -182,7 +158,7 @@ export default function App() {
           />
         </View>
       }
-     
+      <Text style={{fontWeight:'bold', marginTop:20}}>BrianFs</Text>
       <StatusBar style="auto" />
   
     </View>
